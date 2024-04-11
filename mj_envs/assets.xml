@@ -1,0 +1,300 @@
+<mujocoinclude>
+  <compiler angle="radian" meshdir="assets" autolimits="true" convexhull="false"/>
+
+  <option impratio="10"/>
+
+  <default>
+    <!-- cup -->
+    <default class="cup">
+      <mesh scale="0.0015 0.0015 0.0015" />
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" rgba="1 1 1 1" density="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh" condim="3" priority="0" friction="0.5 0.01 0.003" density="1300"/>
+      </default>
+    </default>
+
+    <!-- touch sensor -->
+    <default class="sensor_touch">
+            <site size="0.010" group="5" type="sphere" rgba="0.8 0.8 0.8 0.25" />
+    </default>
+
+    <!-- shadow hand -->
+    <default class="right_hand">
+      <mesh scale="0.001 0.001 0.001"/>
+      <joint axis="1 0 0" damping="0.05" armature="0.0002" frictionloss="0.01"/>
+      <position forcerange="-1 1"/>
+
+      <default class="wrist">
+        <joint damping="0.5"/>
+        <default class="wrist_y">
+          <joint axis="0 1 0" range="-0.523599 0.174533"/>
+          <position kp="10" ctrlrange="-0.523599 0.174533" forcerange="-10 10"/>
+        </default>
+        <default class="wrist_x">
+          <joint range="-0.698132 0.488692"/>
+          <position kp="8" ctrlrange="-0.698132 0.488692" forcerange="-5 5"/>
+        </default>
+      </default>
+
+      <default class="thumb">
+        <default class="thbase">
+          <joint axis="0 0 -1" range="-1.0472 1.0472"/>
+          <position kp="0.4" ctrlrange="-1.0472 1.0472" forcerange="-3 3"/>
+        </default>
+        <default class="thproximal">
+          <joint range="0 1.22173"/>
+          <position ctrlrange="0 1.22173" forcerange="-2 2"/>
+        </default>
+        <default class="thhub">
+          <joint range="-0.20944 0.20944"/>
+          <position kp="0.5" ctrlrange="-0.20944 0.20944"/>
+        </default>
+        <default class="thmiddle">
+          <joint axis="0 -1 0" range="-0.698132 0.698132"/>
+          <position kp="1.5" ctrlrange="-0.698132 0.698132"/>
+        </default>
+        <default class="thdistal">
+          <joint range="-0.261799 1.5708"/>
+          <position ctrlrange="-0.261799 1.5708"/>
+        </default>
+      </default>
+
+      <default class="metacarpal">
+        <joint axis="0.573576 0 0.819152" range="0 0.785398"/>
+        <position ctrlrange="0 0.785398"/>
+      </default>
+      <default class="knuckle">
+        <joint axis="0 -1 0" range="-0.349066 0.349066"/>
+        <position ctrlrange="-0.349066 0.349066"/>
+      </default>
+      <default class="proximal">
+        <joint range="-0.261799 1.5708"/>
+        <position ctrlrange="-0.261799 1.5708"/>
+      </default>
+      <default class="middle_distal">
+        <joint range="0 1.5708"/>
+        <position kp="0.5" ctrlrange="0 3.1415"/>
+      </default>
+
+      <default class="plastic">
+        <geom solimp="0.5 0.99 0.0001" solref="0.005 1"/>
+        <default class="plastic_visual">
+          <geom type="mesh" material="black" contype="0" conaffinity="0" group="2"/>
+        </default>
+        <default class="plastic_collision">
+          <geom group="3"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="black" specular="0.5" shininess="0.25" rgba="0.16355 0.16355 0.16355 1"/>
+    <material name="gray" specular="0.0" shininess="0.25" rgba="0.80848 0.80848 0.80848 1"/>
+    <material name="metallic" specular="0" shininess="0.25" rgba="0.9 0.9 0.9 1"/>
+
+    <!-- Shadow Hand parts -->
+    <mesh class="right_hand" file="forearm_0.obj"/>
+    <mesh class="right_hand" file="forearm_1.obj"/>
+    <mesh class="right_hand" file="forearm_collision.obj"/>
+    <mesh class="right_hand" file="wrist.obj"/>
+    <mesh class="right_hand" file="palm.obj"/>
+    <mesh class="right_hand" file="f_knuckle.obj"/>
+    <mesh class="right_hand" file="f_proximal.obj"/>
+    <mesh class="right_hand" file="f_middle.obj"/>
+    <mesh class="right_hand" file="f_distal_pst.obj"/>
+    <mesh class="right_hand" file="lf_metacarpal.obj"/>
+    <mesh class="right_hand" file="th_proximal.obj"/>
+    <mesh class="right_hand" file="th_middle.obj"/>
+    <mesh class="right_hand" file="th_distal_pst.obj"/>
+
+    <!-- cup parts-->
+    <mesh class="cup" file="./cup/cup.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_0.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_1.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_2.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_3.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_4.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_5.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_6.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_7.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_8.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_9.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_10.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_11.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_12.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_13.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_14.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_15.obj"/>
+    <!-- <mesh class="cup" file="./cup/cup_collision_16.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_17.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_18.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_19.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_20.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_21.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_22.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_23.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_24.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_25.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_26.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_27.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_28.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_29.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_30.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_31.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_32.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_33.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_34.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_35.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_36.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_37.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_38.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_39.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_40.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_41.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_42.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_43.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_44.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_45.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_46.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_47.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_48.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_49.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_50.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_51.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_52.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_53.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_54.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_55.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_56.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_57.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_58.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_59.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_60.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_61.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_62.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_63.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_64.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_65.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_66.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_67.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_68.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_69.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_70.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_71.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_72.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_73.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_74.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_75.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_76.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_77.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_78.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_79.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_80.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_81.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_82.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_83.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_84.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_85.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_86.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_87.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_88.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_89.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_90.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_91.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_92.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_93.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_94.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_95.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_96.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_97.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_98.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_99.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_100.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_101.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_102.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_103.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_104.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_105.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_106.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_107.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_108.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_109.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_110.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_111.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_112.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_113.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_114.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_115.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_116.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_117.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_118.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_119.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_120.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_121.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_122.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_123.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_124.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_125.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_126.obj"/>
+    <mesh class="cup" file="./cup/cup_collision_127.obj"/> -->
+  </asset>
+
+  <contact>
+    <exclude body1="rh_wrist" body2="rh_forearm"/>
+    <exclude body1="rh_thproximal" body2="rh_thmiddle"/>
+  </contact>
+
+  <tendon>
+    <fixed name="rh_FFJ0">
+      <joint joint="rh_FFJ2" coef="1"/>
+      <joint joint="rh_FFJ1" coef="1"/>
+    </fixed>
+    <fixed name="rh_MFJ0">
+      <joint joint="rh_MFJ2" coef="1"/>
+      <joint joint="rh_MFJ1" coef="1"/>
+    </fixed>
+    <fixed name="rh_RFJ0">
+      <joint joint="rh_RFJ2" coef="1"/>
+      <joint joint="rh_RFJ1" coef="1"/>
+    </fixed>
+    <fixed name="rh_LFJ0">
+      <joint joint="rh_LFJ2" coef="1"/>
+      <joint joint="rh_LFJ1" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <position name="rh_A_WRJ2" joint="rh_WRJ2" class="wrist_y"/>
+    <position name="rh_A_WRJ1" joint="rh_WRJ1" class="wrist_x"/>
+    <position name="rh_A_THJ5" joint="rh_THJ5" class="thbase"/>
+    <position name="rh_A_THJ4" joint="rh_THJ4" class="thproximal"/>
+    <position name="rh_A_THJ3" joint="rh_THJ3" class="thhub"/>
+    <position name="rh_A_THJ2" joint="rh_THJ2" class="thmiddle"/>
+    <position name="rh_A_THJ1" joint="rh_THJ1" class="thdistal"/>
+    <position name="rh_A_FFJ4" joint="rh_FFJ4" class="knuckle"/>
+    <position name="rh_A_FFJ3" joint="rh_FFJ3" class="proximal"/>
+    <position name="rh_A_FFJ0" tendon="rh_FFJ0" class="middle_distal"/>
+    <position name="rh_A_MFJ4" joint="rh_MFJ4" class="knuckle"/>
+    <position name="rh_A_MFJ3" joint="rh_MFJ3" class="proximal"/>
+    <position name="rh_A_MFJ0" tendon="rh_MFJ0" class="middle_distal"/>
+    <position name="rh_A_RFJ4" joint="rh_RFJ4" class="knuckle"/>
+    <position name="rh_A_RFJ3" joint="rh_RFJ3" class="proximal"/>
+    <position name="rh_A_RFJ0" tendon="rh_RFJ0" class="middle_distal"/>
+    <position name="rh_A_LFJ5" joint="rh_LFJ5" class="metacarpal"/>
+    <position name="rh_A_LFJ4" joint="rh_LFJ4" class="knuckle"/>
+    <position name="rh_A_LFJ3" joint="rh_LFJ3" class="proximal"/>
+    <position name="rh_A_LFJ0" tendon="rh_LFJ0" class="middle_distal"/>
+  </actuator>
+
+  <sensor>
+    <touch name="Tch_fftip"  site="Tch_fftip"/>
+    <touch name="Tch_mftip"  site="Tch_mftip"/>
+    <touch name="Tch_rftip"  site="Tch_rftip"/>
+    <touch name="Tch_lftip"  site="Tch_lftip"/>
+    <touch name="Tch_thtip"  site="Tch_thtip"/>
+  </sensor>
+
+</mujocoinclude>

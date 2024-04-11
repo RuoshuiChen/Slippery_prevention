@@ -1,0 +1,202 @@
+<mujoco model="cup">
+  <!-- <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default> -->
+  <!-- <asset>
+    <mesh file="cup.obj"/>
+    <mesh file="cup_collision_0.obj"/>
+    <mesh file="cup_collision_1.obj"/>
+    <mesh file="cup_collision_2.obj"/>
+    <mesh file="cup_collision_3.obj"/>
+    <mesh file="cup_collision_4.obj"/>
+    <mesh file="cup_collision_5.obj"/>
+    <mesh file="cup_collision_6.obj"/>
+    <mesh file="cup_collision_7.obj"/>
+    <mesh file="cup_collision_8.obj"/>
+    <mesh file="cup_collision_9.obj"/>
+    <mesh file="cup_collision_10.obj"/>
+    <mesh file="cup_collision_11.obj"/>
+    <mesh file="cup_collision_12.obj"/>
+    <mesh file="cup_collision_13.obj"/>
+    <mesh file="cup_collision_14.obj"/>
+    <mesh file="cup_collision_15.obj"/>
+    <mesh file="cup_collision_16.obj"/>
+    <mesh file="cup_collision_17.obj"/>
+    <mesh file="cup_collision_18.obj"/>
+    <mesh file="cup_collision_19.obj"/>
+    <mesh file="cup_collision_20.obj"/>
+    <mesh file="cup_collision_21.obj"/>
+    <mesh file="cup_collision_22.obj"/>
+    <mesh file="cup_collision_23.obj"/>
+    <mesh file="cup_collision_24.obj"/>
+    <mesh file="cup_collision_25.obj"/>
+    <mesh file="cup_collision_26.obj"/>
+    <mesh file="cup_collision_27.obj"/>
+    <mesh file="cup_collision_28.obj"/>
+    <mesh file="cup_collision_29.obj"/>
+    <mesh file="cup_collision_30.obj"/>
+    <mesh file="cup_collision_31.obj"/>
+  </asset> -->
+  <!-- <worldbody> -->
+    <body name="cup">
+      <!-- <freejoint/> -->
+      <geom mesh="cup" class="visual"/>
+      <!-- geoms to prevent leaking -->
+      <!-- <geom type="cylinder" size="0.045 0.006" class="collision" pos="0.05 0.007 0.05" euler="1.57 0 0"/> -->
+      <!-- <geom type="cylinder" size="0.045 0.007" class="collision" pos="0.05 0.008 0.05" euler="1.5708 0 0"/> -->
+      <!-- <geom type="cylinder" size="0.045 0.01" class="collision" pos="0.05 0.01 0.05" euler="1.5708 0 0"/> -->
+      <!-- <geom type="cylinder" size="0.045 0.01" class="collision" pos="0.05 0.08 0.05" euler="1.5708 0 0"/> -->
+
+      <!-- <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.05 0.053 0.09" euler="0 0 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.05 0.053 0.01" euler="0 0 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.09 0.053 0.05" euler="0 1.5708 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.01 0.053 0.05" euler="0 1.5708 0"/>
+
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.07 0.053 0.085" euler="0 0.5236 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.085 0.053 0.07" euler="0 1.0472 0"/>
+
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.03 0.053 0.015" euler="0 0.5236 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.015 0.053 0.03" euler="0 1.0472 0"/>
+
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.07 0.053 0.015" euler="0 -0.5236 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.085 0.053 0.03" euler="0 -1.0472 0"/>
+
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.03 0.053 0.085" euler="0 -0.5236 0"/>
+      <geom type="box" size="0.01 0.052 0.004" class="collision" pos="0.015 0.053 0.07" euler="0 -1.0472 0"/> -->
+
+      <geom mesh="cup_collision_0" class="collision"/>
+      <geom mesh="cup_collision_1" class="collision"/>
+      <geom mesh="cup_collision_2" class="collision"/>
+      <geom mesh="cup_collision_3" class="collision"/>
+      <geom mesh="cup_collision_4" class="collision"/>
+      <geom mesh="cup_collision_5" class="collision"/>
+      <geom mesh="cup_collision_6" class="collision"/>
+      <geom mesh="cup_collision_7" class="collision"/>
+      <geom mesh="cup_collision_8" class="collision"/>
+      <geom mesh="cup_collision_9" class="collision"/>
+      <geom mesh="cup_collision_10" class="collision"/>
+      <geom mesh="cup_collision_11" class="collision"/>
+      <geom mesh="cup_collision_12" class="collision"/>
+      <geom mesh="cup_collision_13" class="collision"/>
+      <geom mesh="cup_collision_14" class="collision"/>
+      <geom mesh="cup_collision_15" class="collision"/>
+      <!-- <geom mesh="cup_collision_16" class="collision"/>
+      <geom mesh="cup_collision_17" class="collision"/>
+      <geom mesh="cup_collision_18" class="collision"/>
+      <geom mesh="cup_collision_19" class="collision"/>
+      <geom mesh="cup_collision_20" class="collision"/>
+      <geom mesh="cup_collision_21" class="collision"/>
+      <geom mesh="cup_collision_22" class="collision"/>
+      <geom mesh="cup_collision_23" class="collision"/>
+      <geom mesh="cup_collision_24" class="collision"/>
+      <geom mesh="cup_collision_25" class="collision"/>
+      <geom mesh="cup_collision_26" class="collision"/>
+      <geom mesh="cup_collision_27" class="collision"/>
+      <geom mesh="cup_collision_28" class="collision"/>
+      <geom mesh="cup_collision_29" class="collision"/>
+      <geom mesh="cup_collision_30" class="collision"/>
+      <geom mesh="cup_collision_31" class="collision"/>
+      <geom mesh="cup_collision_32" class="collision"/>
+      <geom mesh="cup_collision_33" class="collision"/>
+      <geom mesh="cup_collision_34" class="collision"/>
+      <geom mesh="cup_collision_35" class="collision"/>
+      <geom mesh="cup_collision_36" class="collision"/>
+      <geom mesh="cup_collision_37" class="collision"/>
+      <geom mesh="cup_collision_38" class="collision"/>
+      <geom mesh="cup_collision_39" class="collision"/>
+      <geom mesh="cup_collision_40" class="collision"/>
+      <geom mesh="cup_collision_41" class="collision"/>
+      <geom mesh="cup_collision_42" class="collision"/>
+      <geom mesh="cup_collision_43" class="collision"/>
+      <geom mesh="cup_collision_44" class="collision"/>
+      <geom mesh="cup_collision_45" class="collision"/>
+      <geom mesh="cup_collision_46" class="collision"/>
+      <geom mesh="cup_collision_47" class="collision"/>
+      <geom mesh="cup_collision_48" class="collision"/>
+      <geom mesh="cup_collision_49" class="collision"/>
+      <geom mesh="cup_collision_50" class="collision"/>
+      <geom mesh="cup_collision_51" class="collision"/>
+      <geom mesh="cup_collision_52" class="collision"/>
+      <geom mesh="cup_collision_53" class="collision"/>
+      <geom mesh="cup_collision_54" class="collision"/>
+      <geom mesh="cup_collision_55" class="collision"/>
+      <geom mesh="cup_collision_56" class="collision"/>
+      <geom mesh="cup_collision_57" class="collision"/>
+      <geom mesh="cup_collision_58" class="collision"/>
+      <geom mesh="cup_collision_59" class="collision"/>
+      <geom mesh="cup_collision_60" class="collision"/>
+      <geom mesh="cup_collision_61" class="collision"/>
+      <geom mesh="cup_collision_62" class="collision"/>
+      <geom mesh="cup_collision_63" class="collision"/>
+      <geom mesh="cup_collision_64" class="collision"/>
+      <geom mesh="cup_collision_65" class="collision"/>
+      <geom mesh="cup_collision_66" class="collision"/>
+      <geom mesh="cup_collision_67" class="collision"/>
+      <geom mesh="cup_collision_68" class="collision"/>
+      <geom mesh="cup_collision_69" class="collision"/>
+      <geom mesh="cup_collision_70" class="collision"/>
+      <geom mesh="cup_collision_71" class="collision"/>
+      <geom mesh="cup_collision_72" class="collision"/>
+      <geom mesh="cup_collision_73" class="collision"/>
+      <geom mesh="cup_collision_74" class="collision"/>
+      <geom mesh="cup_collision_75" class="collision"/>
+      <geom mesh="cup_collision_76" class="collision"/>
+      <geom mesh="cup_collision_77" class="collision"/>
+      <geom mesh="cup_collision_78" class="collision"/>
+      <geom mesh="cup_collision_79" class="collision"/>
+      <geom mesh="cup_collision_80" class="collision"/>
+      <geom mesh="cup_collision_81" class="collision"/>
+      <geom mesh="cup_collision_82" class="collision"/>
+      <geom mesh="cup_collision_83" class="collision"/>
+      <geom mesh="cup_collision_84" class="collision"/>
+      <geom mesh="cup_collision_85" class="collision"/>
+      <geom mesh="cup_collision_86" class="collision"/>
+      <geom mesh="cup_collision_87" class="collision"/>
+      <geom mesh="cup_collision_88" class="collision"/>
+      <geom mesh="cup_collision_89" class="collision"/>
+      <geom mesh="cup_collision_90" class="collision"/>
+      <geom mesh="cup_collision_91" class="collision"/>
+      <geom mesh="cup_collision_92" class="collision"/>
+      <geom mesh="cup_collision_93" class="collision"/>
+      <geom mesh="cup_collision_94" class="collision"/>
+      <geom mesh="cup_collision_95" class="collision"/>
+      <geom mesh="cup_collision_96" class="collision"/>
+      <geom mesh="cup_collision_97" class="collision"/>
+      <geom mesh="cup_collision_98" class="collision"/>
+      <geom mesh="cup_collision_99" class="collision"/>
+      <geom mesh="cup_collision_100" class="collision"/>
+      <geom mesh="cup_collision_101" class="collision"/>
+      <geom mesh="cup_collision_102" class="collision"/>
+      <geom mesh="cup_collision_103" class="collision"/>
+      <geom mesh="cup_collision_104" class="collision"/>
+      <geom mesh="cup_collision_105" class="collision"/>
+      <geom mesh="cup_collision_106" class="collision"/>
+      <geom mesh="cup_collision_107" class="collision"/>
+      <geom mesh="cup_collision_108" class="collision"/>
+      <geom mesh="cup_collision_109" class="collision"/>
+      <geom mesh="cup_collision_110" class="collision"/>
+      <geom mesh="cup_collision_111" class="collision"/>
+      <geom mesh="cup_collision_112" class="collision"/>
+      <geom mesh="cup_collision_113" class="collision"/>
+      <geom mesh="cup_collision_114" class="collision"/>
+      <geom mesh="cup_collision_115" class="collision"/>
+      <geom mesh="cup_collision_116" class="collision"/>
+      <geom mesh="cup_collision_117" class="collision"/>
+      <geom mesh="cup_collision_118" class="collision"/>
+      <geom mesh="cup_collision_119" class="collision"/>
+      <geom mesh="cup_collision_120" class="collision"/>
+      <geom mesh="cup_collision_121" class="collision"/>
+      <geom mesh="cup_collision_122" class="collision"/>
+      <geom mesh="cup_collision_123" class="collision"/>
+      <geom mesh="cup_collision_124" class="collision"/>
+      <geom mesh="cup_collision_125" class="collision"/>
+      <geom mesh="cup_collision_126" class="collision"/>
+      <geom mesh="cup_collision_127" class="collision"/> -->
+    </body>
+  <!-- </worldbody> -->
+</mujoco>

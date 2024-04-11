@@ -1,0 +1,63 @@
+<mujoco model="right_shadow_hand watercup">
+
+  <include file='assets.xml'/>
+  
+  <statistic extent="0.3" center="0.3 0 0"/>
+
+  <option timestep="0.005" jacobian="sparse" gravity="0 0 -2"/>
+  <size nconmax="6000" njmax="6000" nstack="50000000"/>
+
+  <visual>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <quality shadowsize="8192"/>
+    <!-- <global azimuth="220" elevation="-30"/> -->
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512"
+        height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+        rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5"
+        reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <!-- light -->
+    <light pos="0 0 1"/>
+    <light pos="0.3 0 1.5" dir="0 0 -1" directional="true"/>
+    <!-- floor -->
+    <geom name="floor" pos="0 0 0" size="0 0 0.05" type="plane" material="groundplane" condim="1"/>
+    
+    <!-- Shadow Hand -->
+    <body name="forearm" pos="0 0 0.3" euler="-1.57 0 0">
+      <joint name="ARTx" pos="0 0 0" axis="1 0 0" type="slide" range="-0.25 0.25" damping="50" limited="true"/>
+      <joint name="ARTy" pos="0 0 0" axis="0 0 1" type="slide" range="-0.25 0.25" damping="50" limited="true"/>
+      <joint name="ARTz" pos="0 0 0" axis="0 -1 0" type="slide" range="-0.3 0.3" damping="50" limited="true"/>
+      <joint name="ARRx" pos="0 0 0" axis="1 0 0" range="-.75 .75" damping="50" limited="true"/>
+      <joint name="ARRy" pos="0 0 0" axis="0 0 1" range="-.75 .75" damping="50" limited="true"/>
+      <joint name="ARRz" pos="0 0 0" axis="0 -1 0" range="-.75 .75" damping="50" limited="true"/>
+      <include file="right_hand_touch.xml"/>
+    </body>
+
+    <!-- cup -->
+    <body pos="0.35 0.13 0.15" euler="1.5708 0 0">
+      <freejoint/>
+      <include file="cup.xml"/>
+    </body>
+
+    <!-- particles -->
+    <composite type="particle" count="2 2 40" spacing="0.03" offset="0.43 0.095 0.8">
+      <geom size=".007" rgba=".8 .2 .1 1" condim="1" density="20000"/>
+    </composite>
+  </worldbody>
+
+  <actuator>
+        <general name="A_ARTx" joint="ARTx" ctrlrange="-0.25 0.25" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+        <general name="A_ARTy" joint="ARTy" ctrlrange="-0.25 0.25" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+        <general name="A_ARTz" joint="ARTz" ctrlrange="-0.3 0.3" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+        <general name="A_ARRx" joint="ARRx" ctrlrange="-.75 .75" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+        <general name="A_ARRy" joint="ARRy" ctrlrange="-.75 .75" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+        <general name="A_ARRz" joint="ARRz" ctrlrange="-.75 .75" biastype="affine" gainprm="500 0 0" biasprm="0 -200 0" />
+    </actuator>
+</mujoco>
